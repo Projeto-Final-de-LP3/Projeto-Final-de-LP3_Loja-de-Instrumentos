@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<h3>Cadastro de Usuário</h3>
+<p>Acesse o formulário a seguir para realizar seu cadastro</p>
+
+<form asp-action="CreateCliente" method="post">
+
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome">
+
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email">
+
+    <label for="endereco">Endereco</label>
+    <input type="text" name="endereco" id="endereco">
+
+    <label for="cpf">CPF</label>
+    <input type="number" name="cpf" id="cpf">
+
+    <label for="pagamento">Pagamento</label>
+    <input type="number" name="cpf" id="cpf">
+
+    <select name="tipo" id="tipo">
+        <option value="Cartao">Cartão</option>
+        <option value="Boleto">Boleto</option>
+        <option value="Pix">Pix</option>
+    </select>
+
+    <input type="submit" value="Cadastrar">
+</form>
