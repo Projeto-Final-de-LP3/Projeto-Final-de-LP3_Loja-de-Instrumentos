@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjetoFinaldeLP3LojadeInstrumentos.ViewModels;
+using ProjetoFinalLP3.ViewModels;
 
 namespace ProjetoFinaldeLP3LojadeInstrumentos.Controllers;
 
@@ -15,7 +15,7 @@ public class LojaController : Controller
 
     public IActionResult Cadastrar() => View();
 
-    public IActionResult CreateCliente(string? nome, string? email, string endereco, int? cpf, int? pagamento, string? tipo)
+    public IActionResult CreateCliente(string? nome, string? email, int id, string endereco, int? cpf, int? pagamento, string? tipo)
     {
         if (lojas.Any(y => y.Nome == nome))
         {
@@ -26,7 +26,7 @@ public class LojaController : Controller
         {
             id = lojas.Count + 1;
 
-            lojas.Add(new LojaViewModel(nome, email, endereco, cpf, pagamento, tipo));
+            lojas.Add(new LojaViewModel(nome, email, id, endereco, cpf, pagamento, tipo));
 
             return RedirectToAction("Admin");
         }
